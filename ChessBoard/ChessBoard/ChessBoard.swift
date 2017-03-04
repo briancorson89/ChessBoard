@@ -9,23 +9,19 @@
 import Foundation
 
 /*
- Description: squareLocation produces tuple in the (row, col)
+ Description: squareLocation produces tuple in the (row, col) format from an integer location
  Parameters: an int that represents a place on the chess board
  Returns: a tuple that represent the row and column of the square on the chess board
- Precondition: the number must be in the range of inclusive 0 and exclusive Square Dimension * number of rows
- Postcondition: bad data will be represented with (-1, -1)
  */
 func squareLocation( number: Int ) -> (row: Int, col: Int) {//give an int
-    var row: Int
-    var col: Int
-    
-    if(number >= (globalSquareDimension * globalRowCounter) || number < 0){
-        row = -1//guard against bad info
-        col = -1
-    }
-    else{
-        row = number / globalSquareDimension//gives good info
-        col = number % globalSquareDimension
-    }
-    return (row, col)//get a tuple
+    return ( (number / globalSquareDimension), (number % globalSquareDimension))//get a tuple
+}
+
+/*
+ Description: integerLocation produces an integer represent from a tuple in the (row, col) format
+ Parameters: a tuple in the (row,col) format
+ Returns: an integer representation of a location on the chess board
+ */
+func integerLocation ( tuple: (row: Int, col: Int)) -> Int{//give a tuple
+    return (globalSquareDimension * tuple.row) + tuple.col//get an int
 }
