@@ -16,6 +16,6 @@ for row in 0..<globalSquareDimension {//makes the array the length of N in an Nx
     globalRowCounter += 1//increment row counter
 }
 for i in 0..<(globalSquareDimension * globalRowCounter) {
-    print("\(i) is at location \(squareLocation(number: i))")
+    print("\(i) is at location \(squareLocation(number: i)) is at integer \(integerLocation(tuple: squareLocation(number: i)))")
 }
 
