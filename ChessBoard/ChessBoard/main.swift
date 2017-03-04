@@ -15,4 +15,7 @@ for row in 0..<globalSquareDimension {//makes the array the length of N in an Nx
     printArray(array: row)//calls print array
     globalRowCounter += 1//increment row counter
 }
+for i in 0..<(globalSquareDimension * globalRowCounter) {
+    print("\(i) is at location \(squareLocation(number: i))")
+}
 
